@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class _9_1_find_place 
+{
+    public static void main(String[] args)
+    {
+        Scanner s=new Scanner(System.in);
+        int[] arr={1,3,5,6};
+        
+        System.out.print("Enter the number : ");
+        int toFind=s.nextInt();
+        
+        int shut=0;
+        int set=0;
+        int len=arr.length;
+
+        for(int i=0;i<len;i++)
+        {
+            if(arr[i]==toFind)
+            {
+                set=i;
+                shut=1;
+            }
+        }
+
+        // arr={1,3,5,6};
+
+        if(shut==0)
+        {
+            for(int j=0;j<len;j++)
+            {
+                // System.out.print(j);
+
+                if(j<len-1)
+                {
+                    if(arr[j]<toFind && arr[j+1]>toFind)
+                    {
+                        set=j+1;
+                        shut=1;
+                    }
+                }
+            }    
+        }
+
+        if(shut==0)
+        {
+            if(toFind<arr[0])
+            {
+                set=0;
+            }
+            else if(toFind>arr[len-1])
+            {
+                set=len;
+            }
+        }
+        System.out.print(set);
+    }    
+}
