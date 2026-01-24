@@ -1,0 +1,61 @@
+import java.util.*;
+
+public class rotate_matrix
+{
+    public static void main(String[] args)
+    {
+        int[][] arr={
+            {1,2,3},
+            {4,5,6},
+            {7,8,9}
+        };
+
+        int[][] arr2=arr;
+
+        int[][] result=new int[3][3];
+
+        for(int x=2;x>=0;x--)
+        {
+            for(int y=2;y>=0;y--)
+            {
+                result[y][x]=arr[x][y];
+            }
+        }
+
+        for(int u=0;u<3;u++)
+        {
+            for(int v=0;v<3;v++)
+            {
+                System.out.print(result[u][v]);
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+       
+        for(int i=0;i<3;i++)
+        {
+            int left=0;
+            int right=2;
+
+            while(left<right)
+            {
+                int temp=result[i][left];
+                result[i][left]=result[i][right];
+                result[i][right]=temp;
+                left++;
+                right--;
+            }
+        }
+
+        for(int o=0;o<3;o++)
+        {
+            for(int p=0;p<3;p++)
+            {
+                System.out.print(result[o][p]);
+            }
+            System.out.println();
+        }
+    }
+}
