@@ -79,4 +79,5 @@ public class IntersectionofTwoLinkedLists {
 
         return ptrA; // returns the intersection node, or null if no intersection
     }
+
 }
